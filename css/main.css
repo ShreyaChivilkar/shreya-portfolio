@@ -1,0 +1,102 @@
+/* ---------- Base Reset ---------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  background-color: #0f172a;
+  color: #e5e7eb;
+  line-height: 1.6;
+}
+
+/* ---------- Layout ---------- */
+main {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+section {
+  padding: 80px 0;
+}
+
+/* ---------- Typography ---------- */
+h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+h2 {
+  font-size: 1.75rem;
+  font-weight: 600;
+  margin-bottom: 24px;
+}
+
+p {
+  font-size: 1rem;
+  color: #cbd5f5;
+  max-width: 800px;
+}
+
+/* ---------- Hero ---------- */
+#hero {
+  min-height: 70vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#hero h2 {
+  color: #38bdf8;
+  font-weight: 500;
+}
+
+#hero p {
+  margin-top: 16px;
+  font-size: 1.1rem;
+}
+
+/* ---------- Buttons ---------- */
+.hero-actions {
+  margin-top: 32px;
+  display: flex;
+  gap: 16px;
+}
+
+.btn {
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.btn.primary {
+  background-color: #38bdf8;
+  color: #0f172a;
+}
+
+.btn.primary:hover {
+  background-color: #0ea5e9;
+}
+
+.btn.secondary {
+  border: 1px solid #38bdf8;
+  color: #38bdf8;
+}
+
+.btn.secondary:hover {
+  background-color: rgba(56, 189, 248, 0.1);
+}
+
+/* ---------- Footer ---------- */
+footer {
+  padding: 40px 20px;
+  text-align: center;
+  color: #94a3b8;
+  font-size: 0.9rem;
+}
