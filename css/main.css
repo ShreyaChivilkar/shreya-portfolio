@@ -262,3 +262,46 @@ footer {
   margin-bottom: 12px;
   color: #cbd5f5;
 }
+
+/* ---------- Education ---------- */
+.education-item {
+  margin-top: 32px;
+}
+
+.education-item h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.education-meta {
+  display: block;
+  font-size: 0.9rem;
+  color: #94a3b8;
+  margin-top: 4px;
+}
+
+.education-item p {
+  margin-top: 8px;
+  color: #cbd5f5;
+}
+/* ---------- Contact ---------- */
+#contact p {
+  max-width: 600px;
+  margin-bottom: 24px;
+}
+
+.contact-links {
+  display: flex;
+  gap: 24px;
+}
+
+.contact-links a {
+  color: #38bdf8;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.contact-links a:hover {
+  text-decoration: underline;
+}
+
