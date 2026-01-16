@@ -1,3 +1,4 @@
+// Sticky navbar scroll effect
 const navbar = document.querySelector('.navbar');
 
 window.addEventListener('scroll', () => {
@@ -7,3 +8,20 @@ window.addEventListener('scroll', () => {
     navbar.classList.remove('scrolled');
   }
 });
+
+// Fade-in on scroll
+const fadeElements = document.querySelectorAll('.fade-in');
+
+const observer = new IntersectionObserver(
+  (entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target); // animate once
+      }
+    });
+  },
+  { threshold: 0.15 }
+);
+
+fadeElements.forEach(el => observer.observe(el));
