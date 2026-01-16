@@ -214,3 +214,51 @@ footer {
   font-size: 0.95rem;
   color: #e5e7eb;
 }
+
+/* ---------- Publications & Achievements ---------- */
+.pub-item {
+  margin-top: 32px;
+  padding-left: 16px;
+  border-left: 3px solid #38bdf8;
+}
+
+.pub-item h3 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.pub-meta {
+  font-size: 0.9rem;
+  color: #94a3b8;
+  margin-bottom: 6px;
+}
+
+.pub-authors {
+  font-size: 0.9rem;
+  color: #cbd5f5;
+  margin-bottom: 8px;
+}
+
+.pub-link {
+  font-size: 0.9rem;
+  color: #38bdf8;
+  text-decoration: none;
+}
+
+.pub-link:hover {
+  text-decoration: underline;
+}
+
+.achievements {
+  margin-top: 40px;
+}
+
+.achievements ul {
+  margin-left: 20px;
+}
+
+.achievements li {
+  margin-bottom: 12px;
+  color: #cbd5f5;
+}
