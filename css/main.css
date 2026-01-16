@@ -129,3 +129,12 @@ footer {
   font-size: 0.95rem;
   color: #cbd5f5;
 }
+
+.skill-card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.skill-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+}
