@@ -40,3 +40,29 @@ navLinks.querySelectorAll('a').forEach(link => {
     navLinks.classList.remove('open');
   });
 });
+
+/* =====================================================
+   THEME TOGGLE (Light / Dark)
+   ===================================================== */
+
+const themeToggle = document.getElementById('theme-toggle');
+const root = document.documentElement;
+
+// Load saved theme
+const savedTheme = localStorage.getItem('theme');
+if (savedTheme) {
+  root.setAttribute('data-theme', savedTheme);
+  themeToggle.textContent = savedTheme === 'light' ? '◐' : '◑';
+}
+
+// Toggle theme on click
+themeToggle.addEventListener('click', () => {
+  const isLight = root.getAttribute('data-theme') === 'light';
+  const newTheme = isLight ? 'dark' : 'light';
+
+  root.setAttribute('data-theme', newTheme);
+  localStorage.setItem('theme', newTheme);
+
+  themeToggle.textContent = newTheme === 'light' ? '◐' : '◑';
+});
+
