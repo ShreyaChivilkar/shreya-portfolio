@@ -566,3 +566,6 @@ html {
   align-items: center;
   gap: 16px;
 }
+.education-item p {
+  margin-top: 6px;
+}
