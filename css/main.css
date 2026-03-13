@@ -466,21 +466,18 @@ footer {
 /* =====================================================
    EDUCATION
    ===================================================== */
-/* =========================
-   EDUCATION SECTION
-   ========================= */
 
 .education-timeline{
   display:flex;
   flex-direction:column;
-  gap:48px;
+  gap:32px;
   margin-top:32px;
 
   position:relative;
   padding-left:28px;
 }
 
-/* vertical timeline line */
+/* vertical timeline */
 
 .education-timeline::before{
   content:"";
@@ -492,22 +489,31 @@ footer {
   background:var(--border-subtle);
 }
 
-/* education item */
+/* education card */
 
 .education-item{
   display:flex;
   align-items:flex-start;
-  gap:24px;
+  gap:20px;
 
   position:relative;
-}
 
-.education-item{
-  transition:transform .25s ease;
+  padding:22px 24px;
+
+  background:var(--bg-secondary);
+
+  border-radius:12px;
+
+  border:1px solid var(--border-subtle);
+
+  box-shadow:var(--shadow-soft);
+
+  transition:transform .25s ease, box-shadow .25s ease;
 }
 
 .education-item:hover{
-  transform:translateX(6px);
+  transform:translateY(-3px);
+  box-shadow:var(--shadow-strong);
 }
 
 /* timeline dot */
@@ -516,33 +522,50 @@ footer {
   content:"";
   position:absolute;
   left:-18px;
-  top:12px;
+  top:18px;
   width:10px;
   height:10px;
   border-radius:50%;
   background:var(--accent);
 }
 
-/* logo */
+/* logo container */
+
+.education-logo{
+  flex-shrink:0;
+
+  width:52px;
+  height:52px;
+
+  display:flex;
+  align-items:center;
+  justify-content:center;
+
+  background:var(--bg-primary);
+
+  border-radius:8px;
+
+  border:1px solid var(--border-subtle);
+}
 
 .education-logo img{
-  width:60px;
-  height:60px;
+  width:32px;
+  height:32px;
   object-fit:contain;
 }
 
-/* text */
+/* text hierarchy */
 
 .education-content h3{
-  font-size:1.1rem;
+  font-size:1.15rem;
   font-weight:600;
-  margin-bottom:6px;
+  margin-bottom:4px;
 }
 
 .education-degree{
   font-weight:500;
-  margin-bottom:6px;
   color:var(--text-secondary);
+  margin-bottom:6px;
 }
 
 .education-meta{
@@ -552,17 +575,40 @@ footer {
   margin-bottom:10px;
 }
 
-.education-content p{
-  font-size:0.95rem;
-  line-height:1.6;
-}
+/* thesis */
 
 .education-thesis{
   margin-top:8px;
+  font-size:0.95rem;
 }
+
+/* coursework container */
 
 .education-coursework{
   margin-top:10px;
+  color:var(--text-secondary);
+}
+
+/* course tags */
+
+.course-tags{
+  margin-top:10px;
+  display:flex;
+  flex-wrap:wrap;
+  gap:8px;
+}
+
+.course-tags span{
+  font-size:0.8rem;
+
+  padding:5px 10px;
+
+  border-radius:999px;
+
+  background:var(--bg-primary);
+
+  border:1px solid var(--border-subtle);
+
   color:var(--text-secondary);
 }
 /* =====================================================
