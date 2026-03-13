@@ -628,3 +628,105 @@ html {
   }
 
 }
+
+/* skills layout */
+
+.skills-section{
+margin-top:40px;
+}
+
+.skills-section h3{
+margin-top:40px;
+margin-bottom:20px;
+font-size:1.2rem;
+font-weight:600;
+}
+
+/* grid */
+
+.skills-grid-icons{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(140px,1fr));
+gap:18px;
+max-width:900px;
+}
+
+/* tile */
+
+.skill-tile{
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+
+padding:18px;
+
+border-radius:10px;
+
+background:var(--card-bg);
+
+transition:transform .25s ease, box-shadow .25s ease;
+}
+
+.skill-tile{
+border:1px solid rgba(0,0,0,0.05);
+}
+
+.skill-tile i{
+font-size:32px;
+margin-bottom:8px;
+}
+
+
+[data-theme="dark"] .skill-tile{
+border:1px solid rgba(255,255,255,0.05);
+}
+
+
+.skill-tile:hover{
+
+transform:translateY(-6px) scale(1.03);
+
+box-shadow:
+0 12px 30px rgba(0,0,0,0.15);
+
+cursor:default;
+}
+
+
+/* icon */
+
+.skill-tile i{
+font-size:32px;
+margin-bottom:10px;
+}
+
+
+/* label */
+
+.skill-tile span{
+font-size:.9rem;
+color:var(--text-primary);
+font-weight:500;
+}
+
+[data-theme="light"] .skill-tile i{
+filter:brightness(0.95);
+}
+
+
+:root{
+--card-bg:#111827;
+}
+
+[data-theme="light"]{
+--card-bg:#ffffff;
+}
+
+
+.skill-icon{
+width:28px;
+height:28px;
+object-fit:contain;
+margin-bottom:10px;
+}
