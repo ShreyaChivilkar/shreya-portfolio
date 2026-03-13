@@ -569,3 +569,62 @@ html {
 .education-item p {
   margin-top: 6px;
 }
+
+
+/* ---------- HERO LAYOUT ---------- */
+
+.hero-container{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:60px;
+}
+
+.hero-text{
+  flex:1;
+  max-width:640px;
+}
+
+.hero-tagline{
+  margin-top:16px;
+  font-size:1.1rem;
+}
+
+.hero-about{
+  margin-top:20px;
+}
+
+.hero-about p{
+  margin-bottom:14px;
+}
+
+.hero-photo{
+  flex-shrink:0;
+}
+
+.hero-photo img{
+  width:260px;
+  height:260px;
+  object-fit:cover;
+  border-radius:50%;
+  border:3px solid var(--accent);
+  box-shadow:0 10px 30px rgba(0,0,0,0.3);
+}
+
+@media (max-width: 900px){
+
+  .hero-container{
+    flex-direction:column-reverse;
+    text-align:center;
+  }
+
+  .hero-photo img{
+    width:200px;
+    height:200px;
+  }
+
+  .hero-text{
+    max-width:100%;
+  }
+
+}
