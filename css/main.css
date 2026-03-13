@@ -466,28 +466,96 @@ footer {
 /* =====================================================
    EDUCATION
    ===================================================== */
+/* =========================
+   EDUCATION SECTION
+   ========================= */
 
-.education-item {
-  margin-top: 32px;
+.education-timeline{
+  display:flex;
+  flex-direction:column;
+  gap:48px;
+  margin-top:32px;
+
+  position:relative;
+  padding-left:28px;
 }
 
-.education-item h3 {
-  font-size: 1.1rem;
-  font-weight: 600;
+/* vertical timeline line */
+
+.education-timeline::before{
+  content:"";
+  position:absolute;
+  left:10px;
+  top:0;
+  bottom:0;
+  width:2px;
+  background:var(--border-subtle);
 }
 
-.education-meta {
-  display: block;
-  font-size: 0.9rem;
-  color: var(--text-muted);
-  margin-top: 4px;
+/* education item */
+
+.education-item{
+  display:flex;
+  align-items:flex-start;
+  gap:24px;
+
+  position:relative;
 }
 
-.education-item p {
-  margin-top: 8px;
-  color: var(--text-secondary);
+.education-item{
+  transition:transform .25s ease;
 }
 
+.education-item:hover{
+  transform:translateX(6px);
+}
+
+/* timeline dot */
+
+.education-item::before{
+  content:"";
+  position:absolute;
+  left:-18px;
+  top:12px;
+  width:10px;
+  height:10px;
+  border-radius:50%;
+  background:var(--accent);
+}
+
+/* logo */
+
+.education-logo img{
+  width:60px;
+  height:60px;
+  object-fit:contain;
+}
+
+/* text */
+
+.education-content h3{
+  font-size:1.1rem;
+  font-weight:600;
+  margin-bottom:6px;
+}
+
+.education-degree{
+  font-weight:500;
+  margin-bottom:6px;
+  color:var(--text-secondary);
+}
+
+.education-meta{
+  display:block;
+  font-size:0.9rem;
+  color:var(--text-muted);
+  margin-bottom:10px;
+}
+
+.education-content p{
+  font-size:0.95rem;
+  line-height:1.6;
+}
 /* =====================================================
    CONTACT
    ===================================================== */
