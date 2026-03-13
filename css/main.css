@@ -556,6 +556,15 @@ footer {
   font-size:0.95rem;
   line-height:1.6;
 }
+
+.education-thesis{
+  margin-top:8px;
+}
+
+.education-coursework{
+  margin-top:10px;
+  color:var(--text-secondary);
+}
 /* =====================================================
    CONTACT
    ===================================================== */
