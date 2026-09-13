@@ -75,6 +75,8 @@ main {
   max-width: 1100px;
   margin: 0 auto;
   padding: 0 20px;
+  display: flex;
+  flex-direction: column;
 }
 
 section {
@@ -870,13 +872,16 @@ cursor:pointer;
 /* ---------- SKILLS SECTION ---------- */
 
 .skills-section{
-  margin-top:40px;
+  margin-top: 16px;
+}
+
+.skills-category + .skills-category {
+  margin-top: 14px;
 }
 
 .skills-section h3{
-  margin-top:40px;
-  margin-bottom:20px;
-  font-size:1.2rem;
+  margin: 0 0 8px;
+  font-size:1.1rem;
   font-weight:600;
 }
 
@@ -884,9 +889,68 @@ cursor:pointer;
 
 .skills-grid-icons{
   display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(140px,1fr));
-  gap:18px;
-  max-width:900px;
+  grid-template-columns:repeat(auto-fit,minmax(95px,1fr));
+  gap:10px;
+  max-width:none;
+}
+
+.skills-disclosure {
+  position: relative;
+  min-height: 76px;
+  margin: 0;
+}
+
+.skills-disclosure summary {
+  display: flex;
+  list-style: none;
+  height: 100%;
+  min-height: 76px;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 8px;
+  color: var(--accent);
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: 1px solid var(--border-subtle);
+  border-radius: 8px;
+  background: var(--card-bg);
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.skills-disclosure summary::marker {
+  content: '';
+}
+
+.skills-disclosure summary::after {
+  content: '⌄';
+  font-size: 1.1rem;
+  transition: transform 0.2s ease;
+}
+
+.skills-disclosure[open] summary::after {
+  transform: rotate(180deg);
+}
+
+.skills-disclosure summary:hover {
+  border-color: var(--accent);
+  background: rgba(37, 99, 235, 0.08);
+}
+
+.skills-grid-disclosure {
+  position: absolute;
+  top: calc(100% + 10px);
+  right: 0;
+  z-index: 10;
+  grid-template-columns: repeat(3, minmax(95px, 1fr));
+  width: 330px;
+  margin: 0;
+  padding: 10px;
+  border: 1px solid var(--border-subtle);
+  border-radius: 10px;
+  background: var(--bg-secondary);
+  box-shadow: var(--shadow-soft);
 }
 
 /* tile */
@@ -897,7 +961,8 @@ cursor:pointer;
   align-items:center;
   justify-content:center;
 
-  padding:18px;
+  min-height: 76px;
+  padding:8px;
 
   border-radius:10px;
   background:var(--card-bg);
@@ -912,6 +977,25 @@ cursor:pointer;
   border:1px solid rgba(255,255,255,0.05);
 }
 
+/* Improve card separation on the default dark theme as well as an explicitly selected one. */
+:root:not([data-theme="light"]) .skill-tile,
+[data-theme="dark"] .skill-tile {
+  border-color: rgba(148, 163, 184, 0.28);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.035);
+}
+
+:root:not([data-theme="light"]) .skills-disclosure summary,
+[data-theme="dark"] .skills-disclosure summary {
+  border-color: rgba(148, 163, 184, 0.32);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.035);
+}
+
+[data-theme="light"] .skill-tile,
+[data-theme="light"] .skills-disclosure summary {
+  border-color: rgba(100, 116, 139, 0.32);
+  box-shadow: 0 1px 2px rgba(15, 23, 42, 0.035);
+}
+
 .skill-tile:hover{
   transform:translateY(-6px) scale(1.03);
   box-shadow:0 12px 30px rgba(0,0,0,0.15);
@@ -920,27 +1004,34 @@ cursor:pointer;
 /* icons */
 
 .skill-tile i{
-  font-size:32px;
-  margin-bottom:10px;
+  font-size:22px;
+  margin-bottom:4px;
 }
 
 .skill-icon{
-  width:28px;
-  height:28px;
+  width:22px;
+  height:22px;
   object-fit:contain;
-  margin-bottom:10px;
+  margin-bottom:4px;
 }
 
 /* text */
 
 .skill-tile span{
-  font-size:.9rem;
+  font-size:.78rem;
   color:var(--text-primary);
   font-weight:500;
 }
 
 [data-theme="light"] .skill-tile i{
   filter:brightness(0.95);
+}
+
+@media (max-width: 700px) {
+  .skills-grid-disclosure {
+    left: 0;
+    right: auto;
+  }
 }
 
 /* card colors */
@@ -1111,6 +1202,24 @@ border-radius:2px;
   #rotating-role.role-enter {
     animation: none;
   }
+}
+
+/* Keep skills immediately before the education section in the page flow. */
+#hero {
+  order: -1;
+}
+
+#skills {
+  order: 1;
+  padding: 32px 0;
+}
+
+#education {
+  order: 2;
+}
+
+#contact {
+  order: 3;
 }
 
 .social-circle{
