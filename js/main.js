@@ -41,6 +41,35 @@ navLinks.querySelectorAll('a').forEach(link => {
   });
 });
 
+// Rotating role title in the hero section
+const rotatingRole = document.getElementById('rotating-role');
+const roleNames = [
+  'Software Engineer',
+  'Machine Learning Engineer',
+  'AI Engineer',
+  'Full-Stack Engineer',
+  'Backend Engineer'
+];
+
+if (rotatingRole && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+  let roleIndex = 0;
+
+  window.setInterval(() => {
+    rotatingRole.classList.add('role-exit');
+
+    window.setTimeout(() => {
+      roleIndex = (roleIndex + 1) % roleNames.length;
+      rotatingRole.textContent = roleNames[roleIndex];
+      rotatingRole.classList.remove('role-exit');
+      rotatingRole.classList.add('role-enter');
+
+      rotatingRole.addEventListener('animationend', () => {
+        rotatingRole.classList.remove('role-enter');
+      }, { once: true });
+    }, 220);
+  }, 3000);
+}
+
 /* =====================================================
    THEME TOGGLE (Light / Dark)
    ===================================================== */
